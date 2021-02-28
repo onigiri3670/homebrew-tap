@@ -14,7 +14,6 @@ class Chromenv < Formula
       s.sub! "CHROMENV_HOME=$(pwd)", "CHROMENV_HOME=#{libexec}/.."
     end
     prefix.install ["bin", "libexec"]
-    puts "chromenv update"
   end
 
 end
