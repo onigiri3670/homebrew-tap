@@ -16,11 +16,11 @@ class Chromenv < Formula
     inreplace "bin/chromenv" do |s|
       p s
       # s.gsub! '"${BASH_SOURCE%/*}"/../libexec', libexec
-      s.sub! "CHROMENV_HOME=$(pwd)", ":CHROMENV_HOME=#{HOMEBREW_PREFIX}"
+      s.sub! "CHROMENV_HOME=$(pwd)", "CHROMENV_HOME=#{HOMEBREW_PREFIX}"
     end
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
-    bin.install Dir['bin/*']
+    prefix.install ["bin", "libexec"]
     # system "cmake", ".", *std_cmake_args
   end
 
