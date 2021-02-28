@@ -14,6 +14,7 @@ class Chromenv < Formula
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
     puts 'installメソッドだよ'
+    bin.install "bin/chromenv"
     # system "cmake", ".", *std_cmake_args
   end
 
