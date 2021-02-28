@@ -13,7 +13,7 @@ class Chromenv < Formula
     inreplace "bin/chromenv" do |s|
       s.sub! "CHROMENV_HOME=$(pwd)", "CHROMENV_HOME=#{libexec}/.."
     end
-    prefix.install ["bin", "libexec"]
+    prefix.install ["bin", "libexec", "master", "versions"]
   end
 
 end
