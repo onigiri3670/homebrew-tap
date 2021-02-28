@@ -4,8 +4,8 @@
 class Chromenv < Formula
   desc ""
   homepage ""
-  url "https://github.com/onigiri3670/chromenv/archive/0.0.3.tar.gz"
-  sha256 "fdc5473031fe03c4dadef4909fdfb1e0c09b6f9cb729a8f527ea7c986fcd0fb1"
+  url "https://github.com/onigiri3670/chromenv/archive/0.0.4.tar.gz"
+  sha256 "c63ba986435609a03c2d53c2682a1d408f2d1fa9c937b0551d29985feaa2daf0"
   license ""
 
   # depends_on "cmake" => :build
