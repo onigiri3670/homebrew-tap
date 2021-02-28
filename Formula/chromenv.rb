@@ -8,32 +8,12 @@ class Chromenv < Formula
   sha256 "c63ba986435609a03c2d53c2682a1d408f2d1fa9c937b0551d29985feaa2daf0"
   license ""
 
-  # depends_on "cmake" => :build
 
   def install
-    p libexec
-    p HOMEBREW_PREFIX
     inreplace "bin/chromenv" do |s|
-      p s
-      # s.gsub! '"${BASH_SOURCE%/*}"/../libexec', libexec
-      s.sub! "CHROMENV_HOME=$(pwd)", "CHROMENV_HOME=#{HOMEBREW_PREFIX}"
+      s.sub! "CHROMENV_HOME=$(pwd)", "CHROMENV_HOME=#{libexec}/../"
     end
-    # ENV.deparallelize  # if your formula fails when building in parallel
-    # Remove unrecognized options if warned by configure
     prefix.install ["bin", "libexec"]
-    # system "cmake", ".", *std_cmake_args
   end
 
-  test do
-    # `test do` will create, run in and delete a temporary directory.
-    #
-    # This test will fail and we won't accept that! For Homebrew/homebrew-core
-    # this will need to be a test that verifies the functionality of the
-    # software. Run the test with `brew test chromenv`. Options passed
-    # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
-    #
-    # The installed folder is not in the path, so use the entire path to any
-    # executables being tested: `system "#{bin}/program", "do", "something"`.
-    system "false"
-  end
 end
