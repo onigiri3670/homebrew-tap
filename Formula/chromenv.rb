@@ -11,10 +11,16 @@ class Chromenv < Formula
   # depends_on "cmake" => :build
 
   def install
+    p libexec
+    p HOMEBREW_PREFIX
+    inreplace "bin/chromenv" do |s|
+      p s
+      # s.gsub! '"${BASH_SOURCE%/*}"/../libexec', libexec
+      s.sub! "CHROMENV_HOME=$(pwd)", ":CHROMENV_HOME=#{HOMEBREW_PREFIX}"
+    end
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
-    bin.install "bin/chromenv"
-    bin.install "bin/google-chrome"
+    bin.install Dir['bin/*']
     # system "cmake", ".", *std_cmake_args
   end
 
