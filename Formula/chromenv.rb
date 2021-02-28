@@ -4,8 +4,8 @@
 class Chromenv < Formula
   desc ""
   homepage ""
-  url "https://github.com/onigiri3670/chromenv/archive/0.0.4.tar.gz"
-  sha256 "c63ba986435609a03c2d53c2682a1d408f2d1fa9c937b0551d29985feaa2daf0"
+  url "https://github.com/onigiri3670/chromenv/archive/0.0.5.tar.gz"
+  sha256 "937b44770dafc64a74a7838b3d332d69320b9b3a2814fa19873c5c0fb060ed4b"
   license ""
 
 
