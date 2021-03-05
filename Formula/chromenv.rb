@@ -4,8 +4,8 @@
 class Chromenv < Formula
   desc ""
   homepage ""
-  url "https://github.com/onigiri3670/chromenv/archive/0.1.2.tar.gz"
-  sha256 "e24df52bb967534579bdd32deb949c6eba45db083917d738bb804ce7bc2c7f7a"
+  url "https://github.com/onigiri3670/chromenv/archive/0.1.3.tar.gz"
+  sha256 "306984df44bc6f12c8257b5dd5cc9103f05b8a02efaaf5e1b34b79281a38692c"
   license ""
 
 
@@ -18,11 +18,8 @@ class Chromenv < Formula
 
   def caveats
     <<~EOS
-    #### message from author.
     please exec `chromenv init`.
-    ####
     EOS
-
   end
 
 end
