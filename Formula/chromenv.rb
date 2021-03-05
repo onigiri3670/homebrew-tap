@@ -4,8 +4,8 @@
 class Chromenv < Formula
   desc ""
   homepage ""
-  url "https://github.com/onigiri3670/chromenv/archive/0.1.0.tar.gz"
-  sha256 "c4debb9a36295a6f3df6a027710a90894152ca5f32f84ec15b204e2e648a5e6d"
+  url "https://github.com/onigiri3670/chromenv/archive/0.1.2.tar.gz"
+  sha256 "e24df52bb967534579bdd32deb949c6eba45db083917d738bb804ce7bc2c7f7a"
   license ""
 
 
@@ -13,7 +13,11 @@ class Chromenv < Formula
     inreplace "bin/chromenv" do |s|
       s.sub! "CHROMENV_HOME=$(pwd)", "CHROMENV_HOME=#{libexec}/.."
     end
-    prefix.install ["bin", "libexec", "master", "versions"]
+    prefix.install ["bin", "libexec"]
+  end
+
+  def caveats
+    'please exec `chromenv init`.'
   end
 
 end
